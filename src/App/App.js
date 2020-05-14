@@ -19,7 +19,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>MUSHROOM PICKER</h1>
+        <h1>MUSHROOM MANIA</h1>
         <Forest mushrooms={mushrooms}/>
       </div>
     );
