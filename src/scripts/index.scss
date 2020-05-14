@@ -1,7 +1,15 @@
 @import 'variables';
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 
 body {
   background-color: $favColor;
+}
+.card-footer {
+  height: 40px;
+}
+.card {
+  background-color: transparent;
+  border: none;
 }
