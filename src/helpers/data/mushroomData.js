@@ -1,4 +1,4 @@
-// import mushroomShape from "../propz/mushroomShape";
+let basket = [];
 
 const mushrooms = [
   {
@@ -78,7 +78,7 @@ const mushrooms = [
     id: 'mushroom9',
     name: 'Barometer Earthstar',
     description: 'starry',
-    imgUrl: 'https://lh3.googleusercontent.com/proxy/OA0Cdyb_kxCSRtH-JNYJ9IK6JoVDZHX83ptfWJyFERKljXBfMNrOjFMJT8flnV7Hf0R-MvwNOZb4m-ImaF0Yv4D3WEUsEuq5qw',
+    imgUrl: 'https://www.freeiconspng.com/uploads/mushroom-icon-29.png',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
@@ -105,7 +105,7 @@ const mushrooms = [
     id: 'mushroom12',
     name: 'Hairy Parachute',
     description: 'falling',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/b/bd/SMM2-Parachute-Goomba.png/91px-SMM2-Parachute-Goomba.png',
+    imgUrl: 'https://www.mariowiki.com/images/thumb/8/85/Parabomb_NSMBUD.png/1200px-Parabomb_NSMBUD.png',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
@@ -133,7 +133,7 @@ const mushrooms = [
     id: 'mushroom15',
     name: 'Mint Mildew',
     description: 'lifesaver',
-    imgUrl: 'https://lh3.googleusercontent.com/proxy/C3hnq03hPEmk378zqv3CK85iOqCM1eTjtaIjFpcTQrKdW8gjvyo7tb2-lfxgGXAA1s5LFZHHqkAnhkjcjPiVzUo1_YmdbkY',
+    imgUrl: 'https://www.mariowiki.com/images/thumb/b/b4/1-Up_Mushroom_Artwork_-_Super_Mario_3D_World.png/1200px-1-Up_Mushroom_Artwork_-_Super_Mario_3D_World.png',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
@@ -185,6 +185,38 @@ const mushrooms = [
   },
 ];
 
+const randomlyRemoveMushroom = () => {
+  let poisonousMushroom = '';
+  poisonousMushroom = basket[Math.floor(Math.random() * mushrooms.length)];
+  const poisonousMushroomIndex = basket.indexOf(poisonousMushroom);
+  basket.splice(poisonousMushroomIndex, 1);
+  console.log('selected to remove', poisonousMushroom, poisonousMushroomIndex);
+  getBasket();
+};
 const getMushrooms = () => mushrooms;
 
-export default { getMushrooms };
+const getBasket = () => basket;
+
+const pickAMushroom = () => {
+  console.log('made it to the data file');
+  const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  if (pickedMushroom.isPoisonous && basket.length > 2) {
+    console.log('AHHHHH POISONOUS more than 2 in basket');
+    randomlyRemoveMushroom();
+    randomlyRemoveMushroom();
+  } else if (pickedMushroom.isPoisonous && basket.length === 1) {
+    console.log('AHHHHH POISONOUS only one in basket');
+    randomlyRemoveMushroom();
+  } else if (pickedMushroom.isPoisonous && basket.length === 0) {
+    console.log('poisonous mushroom picked but no mushrooms to remove');
+  } else if (pickedMushroom.isDeadly) {
+    console.log('DEATH COMES TO YOU');
+    basket = [];
+  } else {
+    basket.push(pickedMushroom);
+  }
+  getBasket();
+  console.log(getBasket());
+};
+
+export default { getMushrooms, getBasket, pickAMushroom };
