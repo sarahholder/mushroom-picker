@@ -189,8 +189,7 @@ const getMushrooms = () => mushrooms;
 const getBasket = () => basket;
 
 const pickedPoisonousMushroom = () => {
-  let poisonousMushroom = '';
-  poisonousMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  const poisonousMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
   const poisonousMushroomIndex = basket.indexOf(poisonousMushroom);
   console.log('selected to remove', poisonousMushroom);
   basket.splice(poisonousMushroomIndex, 1);
@@ -199,36 +198,43 @@ const pickedPoisonousMushroom = () => {
 
 const pickedMagicMushroom = () => {
   console.log('picked magic mushroom :)');
+  getMushrooms.forEach((item) => {
+    getBasket.push(item);
+  });
   getBasket();
 };
 
 const runBasketCheck = (mushroom) => {
   const selectedMushroom = mushroom;
-  console.log('This is the picked mushroom', selectedMushroom);
-  if (basket.length !== 0) {
-    basket.forEach((item) => {
-      const duplicate = basket.find((x) => x.id === selectedMushroom.id);
-      if (duplicate === undefined) {
+  // console.log('This is the picked mushroom', selectedMushroom);
+  if (basket.length > 0) {
+    basket.forEach((item, index) => {
+      const duplicate = item.id === selectedMushroom.id;
+      if (duplicate === false) {
+        selectedMushroom.quantity = 1;
         basket.push(selectedMushroom);
-      } else if (duplicate.quantity > 0) {
-        duplicate.quantity += 1;
-        console.log('this is the duplicate');
+      } else {
+        basket[index].quantity += 1;
+        // console.log('the quantity value', selectedMushroom.quantity);
       }
     });
   } else {
+    selectedMushroom.quantity = 1;
     basket.push(selectedMushroom);
   }
 };
 
 const pickAMushroom = () => {
   const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
-  if (pickedMushroom.isPoisonous && basket.length > 2) {
-    console.log('AHHHHH POISONOUS more than 2 in basket');
+  if (pickedMushroom.isPoisonous && basket.length >= 2) {
+    console.log('AHHHHH POISONOUS 2 or more in basket');
     pickedPoisonousMushroom();
     pickedPoisonousMushroom();
   } else if (pickedMushroom.isPoisonous && basket.length === 1) {
+    console.log('AHHHHH POISONOUS mushroom killed 1 in basket');
     pickedPoisonousMushroom();
   } else if (pickedMushroom.isDeadly) {
+    console.log('Deadly Mushroom killed all others');
     basket = [];
   } else if (pickedMushroom.isMagic) {
     console.log('picked magical mushroom');
