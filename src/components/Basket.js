@@ -9,9 +9,15 @@ class Basket extends React.Component {
   }
 
   render() {
+  // let functionCalls = 0;
+  // const countFunction = () => {
+  //   functionCalls += 1;
+  //   return functionCalls;
+  // };
     const { basket } = this.props;
     const buildBasket = basket.map((mushroom, index) => (
-      <Mushroom key={`selectedMushroom${index + 1}`} mushroom={mushroom}/>
+      // <Mushroom key={`selectedMushroom + ${countFunction()}`} id={`selectedMushroom${countFunction()}`} mushroom={mushroom}/>
+      <Mushroom key={mushroom.id} mushroom={mushroom}/>
     ));
     return (
     <div className="Basket d-flex flex-wrap">

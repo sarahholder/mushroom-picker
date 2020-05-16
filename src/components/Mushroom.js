@@ -27,6 +27,13 @@ class Mushroom extends React.Component {
             <h2>{icon}</h2>
             <h3 className="card-title">{mushroom.name}</h3>
             <p className="card-text">Description: {mushroom.description}</p>
+            {
+              mushroom.quantity === undefined ? (
+                <p className="card-text"></p>
+              ) : (
+            <p className="card-text">Quantity: {mushroom.quantity}</p>
+              )
+            }
           </div>
         </div>
       </div>

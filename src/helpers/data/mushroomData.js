@@ -184,39 +184,58 @@ const mushrooms = [
     isDeadly: false,
   },
 ];
-
-const randomlyRemoveMushroom = () => {
-  let poisonousMushroom = '';
-  poisonousMushroom = basket[Math.floor(Math.random() * mushrooms.length)];
-  const poisonousMushroomIndex = basket.indexOf(poisonousMushroom);
-  basket.splice(poisonousMushroomIndex, 1);
-  console.log('selected to remove', poisonousMushroom, poisonousMushroomIndex);
-  getBasket();
-};
 const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
+const pickedPoisonousMushroom = () => {
+  let poisonousMushroom = '';
+  poisonousMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  const poisonousMushroomIndex = basket.indexOf(poisonousMushroom);
+  console.log('selected to remove', poisonousMushroom);
+  basket.splice(poisonousMushroomIndex, 1);
+  getBasket();
+};
+
+const pickedMagicMushroom = () => {
+  console.log('picked magic mushroom :)');
+  getBasket();
+};
+
+const runBasketCheck = (mushroom) => {
+  const selectedMushroom = mushroom;
+  console.log('This is the picked mushroom', selectedMushroom);
+  if (basket.length !== 0) {
+    basket.forEach((item) => {
+      const duplicate = basket.find((x) => x.id === selectedMushroom.id);
+      if (duplicate === undefined) {
+        basket.push(selectedMushroom);
+      } else if (duplicate.quantity > 0) {
+        duplicate.quantity += 1;
+        console.log('this is the duplicate');
+      }
+    });
+  } else {
+    basket.push(selectedMushroom);
+  }
+};
+
 const pickAMushroom = () => {
-  console.log('made it to the data file');
   const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
   if (pickedMushroom.isPoisonous && basket.length > 2) {
     console.log('AHHHHH POISONOUS more than 2 in basket');
-    randomlyRemoveMushroom();
-    randomlyRemoveMushroom();
+    pickedPoisonousMushroom();
+    pickedPoisonousMushroom();
   } else if (pickedMushroom.isPoisonous && basket.length === 1) {
-    console.log('AHHHHH POISONOUS only one in basket');
-    randomlyRemoveMushroom();
-  } else if (pickedMushroom.isPoisonous && basket.length === 0) {
-    console.log('poisonous mushroom picked but no mushrooms to remove');
+    pickedPoisonousMushroom();
   } else if (pickedMushroom.isDeadly) {
-    console.log('DEATH COMES TO YOU');
     basket = [];
+  } else if (pickedMushroom.isMagic) {
+    console.log('picked magical mushroom');
+    pickedMagicMushroom();
   } else {
-    basket.push(pickedMushroom);
+    runBasketCheck(pickedMushroom);
   }
-  getBasket();
-  console.log(getBasket());
 };
 
 export default { getMushrooms, getBasket, pickAMushroom };
