@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import mushroomShape from '../helpers/propz/mushroomShape';
 import Mushroom from './Mushroom';
+import '../styles/index.scss';
 
 class Forest extends React.Component {
   static propTypes = {
@@ -14,8 +15,11 @@ class Forest extends React.Component {
       <Mushroom key={mushroom.id} mushroom={mushroom}/>
     ));
     return (
-      <div className="Forest d-flex flex-wrap">
-        {buildForest}
+      <div>
+        <h2 className="m-5">Pick a Mushroom If you Dare</h2>
+          <div className="Forest d-flex flex-wrap justify-content-center align-items-center">
+            {buildForest}
+        </div>
       </div>
     );
   }

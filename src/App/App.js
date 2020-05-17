@@ -30,11 +30,26 @@ class App extends React.Component {
     const { basket } = this.state;
 
     return (
-      <div className="App">
+      <div className="App justify-content-center ml-5 mr-5">
         <h1>MUSHROOM MANIA</h1>
-        <button className="btn btn-danger" onClick={this.pickAMushroomEvent}>PICK MUSHROOM</button>
-        <Basket basket={basket}/>
-        <Forest mushrooms={mushrooms}/>
+        <div className="d-flex flex-wrap align-content-center">
+          <div className="row col-3 justify-content-center d-flex flex-wrap">
+            <div>
+              <button className="btn btn-danger m-2" onClick={this.pickAMushroomEvent}>PICK MUSHROOM</button>
+            </div>
+            <div>
+              <img className="mario" src='https://www.mariowiki.com/images/thumb/e/eb/Mario_Artwork_-_Mario_Party_4.png/200px-Mario_Artwork_-_Mario_Party_4.png' alt='mario'></img>
+            </div>
+          </div>
+          <div className="col-9">
+            <Basket className="m-0 p-0 basket" basket={basket}/>
+          </div>
+          <div className="row">
+            <div>
+              <Forest className="m-0 p-0 forest" mushrooms={mushrooms}/>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
