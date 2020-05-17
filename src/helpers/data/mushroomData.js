@@ -188,34 +188,42 @@ const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
+// const getNormalMushrooms = () => {
+//   const normalMushrooms = [];
+//   const mushroomsNow = getMushrooms();
+//   mushroomsNow.forEach((item) => {
+//     if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
+//       normalMushrooms.push(item);
+//     }
+//   });
+//   console.log('This is the array of normal mushrooms', normalMushrooms);
+// };
+
 const getBasketTotal = () => {
   let totalMushroomsInBasket = 0;
   basket.forEach((item) => {
     totalMushroomsInBasket += item.quantity;
   });
   console.log('this is the total number mushrooms in basket', totalMushroomsInBasket);
-  getBasket();
+  // checkForWin();
   return totalMushroomsInBasket;
 };
-// const checkForWin = () => {
-//   if (basket.length >= 15) {
-//     getBasket();
+// const checkForWin = (mushrooms, basket) => {
+//   const isTrue(arr, arr2) {
+//     arr.every(i => arr2.includes(i));
 //   }
+//   console.log(isTrue())
 // }
 
 const pickedPoisonousMushroom = (passedInTotal) => {
   const total = passedInTotal;
-  console.log('this is the total', total);
-  console.log('This is what is in the basket before poisonous mushroom picked', basket);
   if (total >= 3) {
     const mushroomToDie1 = basket[Math.floor(Math.random() * basket.length)];
     const mushroomToDieIndex1 = basket.indexOf(mushroomToDie1);
-    console.log('selected to remove', mushroomToDie1);
     if (mushroomToDie1.quantity > 1) {
       mushroomToDie1.quantity -= 1;
       const mushroomToDie2 = basket[Math.floor(Math.random() * basket.length)];
       const mushroomToDieIndex2 = basket.indexOf(mushroomToDie2);
-      console.log('selected to remove #2', mushroomToDie2);
       if (mushroomToDie2.quantity > 1) {
         mushroomToDie2.quantity -= 1;
       } else {
@@ -225,7 +233,6 @@ const pickedPoisonousMushroom = (passedInTotal) => {
       basket.splice(mushroomToDieIndex1, 1);
       const mushroomToDie2 = basket[Math.floor(Math.random() * basket.length)];
       const mushroomToDieIndex2 = basket.indexOf(mushroomToDie2);
-      console.log('selected to remove #2', mushroomToDie2);
       if (mushroomToDie2.quantity > 1) {
         mushroomToDie2.quantity -= 1;
       } else {
@@ -239,7 +246,6 @@ const pickedPoisonousMushroom = (passedInTotal) => {
 };
 
 const pickedMagicMushroom = () => {
-  console.log('picked magic mushroom :)');
   mushrooms.forEach((item) => {
     if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
       runBasketCheck(item);
@@ -248,17 +254,25 @@ const pickedMagicMushroom = () => {
   getBasketTotal();
 };
 
+const youWin = () => {
+  console.log('YOU WIN');
+};
+
 const runBasketCheck = (mushroom) => {
+  const totalBasketLength = basket.length;
   const selectedMushroom = mushroom;
   const findSelected = basket.findIndex((x) => x.id === selectedMushroom.id);
   if (findSelected >= 0) {
     basket[findSelected].quantity += 1;
-    getBasketTotal();
   } else {
     selectedMushroom.quantity = 1;
     basket.push(selectedMushroom);
-    getBasketTotal();
   }
+  console.log('this is the total basket.length', totalBasketLength);
+  if (totalBasketLength === 14) {
+    youWin();
+  }
+  getBasketTotal();
 };
 
 const pickAMushroom = () => {
@@ -266,6 +280,8 @@ const pickAMushroom = () => {
   const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
   if (pickedMushroom.isPoisonous) {
     console.log('AHHHHHH Picked Poison Mushroom');
+    // eslint-disable-next-line no-alert
+    alert(`You just picked a poisonous mushroom!`);
     pickedPoisonousMushroom(total);
   } else if (pickedMushroom.isDeadly) {
     console.log('Deadly Mushroom killed all others');
