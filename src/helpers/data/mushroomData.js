@@ -188,51 +188,85 @@ const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-const pickedPoisonousMushroom = () => {
-  const poisonousMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
-  const poisonousMushroomIndex = basket.indexOf(poisonousMushroom);
-  console.log('selected to remove', poisonousMushroom);
-  basket.splice(poisonousMushroomIndex, 1);
+const getBasketTotal = () => {
+  let totalMushroomsInBasket = 0;
+  basket.forEach((item) => {
+    totalMushroomsInBasket += item.quantity;
+  });
+  console.log('this is the total number mushrooms in basket', totalMushroomsInBasket);
   getBasket();
+  return totalMushroomsInBasket;
+};
+// const checkForWin = () => {
+//   if (basket.length >= 15) {
+//     getBasket();
+//   }
+// }
+
+const pickedPoisonousMushroom = (passedInTotal) => {
+  const total = passedInTotal;
+  console.log('this is the total', total);
+  console.log('This is what is in the basket before poisonous mushroom picked', basket);
+  if (total >= 3) {
+    const mushroomToDie1 = basket[Math.floor(Math.random() * basket.length)];
+    const mushroomToDieIndex1 = basket.indexOf(mushroomToDie1);
+    console.log('selected to remove', mushroomToDie1);
+    if (mushroomToDie1.quantity > 1) {
+      mushroomToDie1.quantity -= 1;
+      const mushroomToDie2 = basket[Math.floor(Math.random() * basket.length)];
+      const mushroomToDieIndex2 = basket.indexOf(mushroomToDie2);
+      console.log('selected to remove #2', mushroomToDie2);
+      if (mushroomToDie2.quantity > 1) {
+        mushroomToDie2.quantity -= 1;
+      } else {
+        basket.splice(mushroomToDieIndex2, 1);
+      }
+    } else {
+      basket.splice(mushroomToDieIndex1, 1);
+      const mushroomToDie2 = basket[Math.floor(Math.random() * basket.length)];
+      const mushroomToDieIndex2 = basket.indexOf(mushroomToDie2);
+      console.log('selected to remove #2', mushroomToDie2);
+      if (mushroomToDie2.quantity > 1) {
+        mushroomToDie2.quantity -= 1;
+      } else {
+        basket.splice(mushroomToDieIndex2, 1);
+      }
+    }
+  } else {
+    basket = [];
+  }
+  getBasketTotal();
 };
 
 const pickedMagicMushroom = () => {
   console.log('picked magic mushroom :)');
-  getMushrooms.forEach((item) => {
-    getBasket.push(item);
+  mushrooms.forEach((item) => {
+    if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
+      runBasketCheck(item);
+    }
   });
-  getBasket();
+  getBasketTotal();
 };
 
 const runBasketCheck = (mushroom) => {
   const selectedMushroom = mushroom;
-  // console.log('This is the picked mushroom', selectedMushroom);
-  if (basket.length > 0) {
-    basket.forEach((item, index) => {
-      const duplicate = item.id === selectedMushroom.id;
-      if (duplicate === false) {
-        selectedMushroom.quantity = 1;
-        basket.push(selectedMushroom);
-      } else {
-        basket[index].quantity += 1;
-        // console.log('the quantity value', selectedMushroom.quantity);
-      }
-    });
+  const findSelected = basket.findIndex((x) => x.id === selectedMushroom.id);
+  if (findSelected >= 0) {
+    basket[findSelected].quantity += 1;
+    getBasketTotal();
   } else {
     selectedMushroom.quantity = 1;
     basket.push(selectedMushroom);
+    getBasketTotal();
   }
 };
 
 const pickAMushroom = () => {
+  const total = getBasketTotal();
   const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
-  if (pickedMushroom.isPoisonous && basket.length >= 2) {
-    console.log('AHHHHH POISONOUS 2 or more in basket');
-    pickedPoisonousMushroom();
-    pickedPoisonousMushroom();
-  } else if (pickedMushroom.isPoisonous && basket.length === 1) {
-    console.log('AHHHHH POISONOUS mushroom killed 1 in basket');
-    pickedPoisonousMushroom();
+  if (pickedMushroom.isPoisonous) {
+    console.log('AHHHHHH Picked Poison Mushroom');
+    pickedPoisonousMushroom(total);
   } else if (pickedMushroom.isDeadly) {
     console.log('Deadly Mushroom killed all others');
     basket = [];
@@ -244,4 +278,10 @@ const pickAMushroom = () => {
   }
 };
 
-export default { getMushrooms, getBasket, pickAMushroom };
+export default
+{
+  getMushrooms,
+  getBasket,
+  pickAMushroom,
+  getBasketTotal,
+};

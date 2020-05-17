@@ -20,20 +20,13 @@ class Mushroom extends React.Component {
     }
 
     return (
-      <div className="Mushroom col-3">
-        <div className="card">
-          {/* <img className="card-img-top" src={mushroom.imgUrl} alt={mushroom.name}/> */}
-          <div className="card-body">
-            <h2>{icon}</h2>
-            <h3 className="card-title">{mushroom.name}</h3>
-            <p className="card-text">Description: {mushroom.description}</p>
-            {
-              mushroom.quantity === undefined ? (
-                <p className="card-text"></p>
-              ) : (
-            <p className="card-text">Quantity: {mushroom.quantity}</p>
-              )
-            }
+      <div className="Mushroom justify-content-middle">
+        <div className="card forestCard p-3">
+          <img className="card-img-top img-responsive fit-image" src={mushroom.imgUrl} alt={mushroom.name}/>
+          <div className="card-body m-0 p-0">
+            <h3>{icon}</h3>
+            <h4>{mushroom.name}</h4>
+            <p>{mushroom.description}</p>
           </div>
         </div>
       </div>
