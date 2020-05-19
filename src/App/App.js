@@ -47,7 +47,7 @@ class App extends React.Component {
     } else if (currentMushroom.isDeadly) {
       modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalDeadly currentMushroom={currentMushroom}/></div>;
     } else if (currentMushroom.isMagic) {
-      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalMagic currentMushroom={currentMushroom}/></div>
+      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalMagic currentMushroom={currentMushroom}/></div>;
     } else if (basket.length === totalNormalMushrooms) {
       modal = 'Basket is FULL';
     }
