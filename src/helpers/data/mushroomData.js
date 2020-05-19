@@ -188,16 +188,17 @@ const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-// const getNormalMushrooms = () => {
-//   const normalMushrooms = [];
-//   const mushroomsNow = getMushrooms();
-//   mushroomsNow.forEach((item) => {
-//     if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
-//       normalMushrooms.push(item);
-//     }
-//   });
-//   console.log('This is the array of normal mushrooms', normalMushrooms);
-// };
+const getNormalMushrooms = () => {
+  const normalMushrooms = [];
+  const mushroomsNow = getMushrooms();
+  mushroomsNow.forEach((item) => {
+    if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
+      normalMushrooms.push(item);
+    }
+  });
+  console.log('This is the array of normal mushrooms', normalMushrooms.length);
+  return normalMushrooms.length;
+};
 
 const getBasketTotal = () => {
   let totalMushroomsInBasket = 0;
@@ -277,11 +278,12 @@ const runBasketCheck = (mushroom) => {
 
 const pickAMushroom = () => {
   const total = getBasketTotal();
+  const normalTotal = getNormalMushrooms();
+  console.log('this is the normalTotal', normalTotal);
+  console.log('this is the total number of normal mushrooms', normalTotal);
   const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
   if (pickedMushroom.isPoisonous) {
     console.log('AHHHHHH Picked Poison Mushroom');
-    // eslint-disable-next-line no-alert
-    alert(`You just picked a poisonous mushroom!`);
     pickedPoisonousMushroom(total);
   } else if (pickedMushroom.isDeadly) {
     console.log('Deadly Mushroom killed all others');
@@ -292,6 +294,7 @@ const pickAMushroom = () => {
   } else {
     runBasketCheck(pickedMushroom);
   }
+  return pickedMushroom;
 };
 
 export default
@@ -300,4 +303,5 @@ export default
   getBasket,
   pickAMushroom,
   getBasketTotal,
+  getNormalMushrooms,
 };

@@ -1,14 +1,20 @@
 import React from 'react';
 import './App.scss';
 
+// import PropTypes from 'prop-types';
+
 import mushroomData from '../helpers/data/mushroomData';
 import Forest from '../components/Forest';
 import Basket from '../components/Basket';
+import ModalPoisonous from '../components/ModalPoisonous';
+import ModalDeadly from '../components/ModalDeadly';
+import ModalMagic from '../components/ModalMagic';
 
 class App extends React.Component {
   state = {
     mushrooms: [],
     basket: [],
+    currentMushroom: {},
   }
 
   componentDidMount() {
@@ -17,21 +23,39 @@ class App extends React.Component {
 
     const basket = mushroomData.getBasket();
     this.setState({ basket });
+
+    const totalNormalMushrooms = mushroomData.getNormalMushrooms();
+    this.setState({ totalNormalMushrooms });
   }
 
   pickAMushroomEvent = (e) => {
-    mushroomData.pickAMushroom();
+    const currentMushroom = mushroomData.pickAMushroom();
     const basket = mushroomData.getBasket();
-    this.setState({ basket });
+    this.setState({ basket, currentMushroom }, console.log('RENDER', this.state.currentMushroom));
   }
 
   render() {
     const { mushrooms } = this.state;
     const { basket } = this.state;
+    const { currentMushroom } = this.state;
+    const { totalNormalMushrooms } = this.state;
+    console.log('this is the normal Mushrooms total in Apps', totalNormalMushrooms);
+
+    let modal = '';
+    if (currentMushroom.isPoisonous) {
+      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalPoisonous currentMushroom={currentMushroom}/></div>;
+    } else if (currentMushroom.isDeadly) {
+      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalDeadly currentMushroom={currentMushroom}/></div>;
+    } else if (currentMushroom.isMagic) {
+      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalMagic currentMushroom={currentMushroom}/></div>
+    } else if (basket.length === totalNormalMushrooms) {
+      modal = 'Basket is FULL';
+    }
 
     return (
       <div className="App justify-content-center ml-5 mr-5">
-        <h1>MUSHROOM MANIA</h1>
+          {modal}
+      <h1>MUSHROOM MANIA</h1>
         <div className="d-flex flex-wrap align-content-center">
           <div className="row col-3 justify-content-center d-flex flex-wrap">
             <div>
@@ -49,7 +73,7 @@ class App extends React.Component {
               <Forest className="m-0 p-0 forest" mushrooms={mushrooms}/>
             </div>
           </div>
-        </div>
+         </div>
       </div>
     );
   }
