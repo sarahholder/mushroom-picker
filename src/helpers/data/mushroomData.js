@@ -1,61 +1,67 @@
 let basket = [];
 
 const mushrooms = [
-  {
-    id: 'mushroom1',
-    name: 'Psilocybe',
-    description: 'magical',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
-    isMagic: true,
-    isPoisonous: false,
-    isDeadly: false,
-  },
-  {
-    id: 'mushroom2',
-    name: 'Purple Jellydisc',
-    description: 'trippy',
-    imgUrl: 'https://www.pngkey.com/png/full/94-946683_purple-mario-mushroom-mario-bros-purple-mushroom.png',
-    isMagic: false,
-    isPoisonous: true,
-    isDeadly: false,
-  },
-  {
-    id: 'mushroom3',
-    name: 'Witche\'s Butter',
-    description: 'psychedilic',
-    // eslint-disable-next-line max-len
-    imgUrl: 'https://vignette.wikia.nocookie.net/mario/images/d/da/1206px-SMP_Poison_Mushroom.png/revision/latest?cb=20190506154457',
-    isMagic: false,
-    isPoisonous: true,
-    isDeadly: false,
-  },
-  {
-    id: 'mushroom4',
-    name: 'Bitter Poisonpie',
-    description: 'mind-expanding',
-    imgUrl: 'https://vignette.wikia.nocookie.net/super-mario-kart-racing/images/9/97/Poison_Mushroom_-_Super_Mario_Kart.png/revision/latest?cb=20170502002407',
-    isMagic: false,
-    isPoisonous: true,
-    isDeadly: false,
-  },
-  {
-    id: 'mushroom5',
-    name: 'Funeral Bell',
-    description: 'death-dealing',
-    imgUrl: 'https://vignette.wikia.nocookie.net/mariobrosfanon/images/4/4c/20101027014858%21PoisonMushroom-1-.png/revision/latest?cb=20120604154053',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: true,
-  },
-  {
-    id: 'mushroom6',
-    name: 'Dewdrop Dapperling',
-    description: 'friendly',
-    imgUrl: 'https://i.pinimg.com/originals/88/bb/df/88bbdf4b6c0d0eb503ffbcdc8e6e48b4.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-  },
+  // {
+  //   id: 'mushroom1',
+  //   name: 'Psilocybe',
+  //   description: 'magic',
+  //   imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
+  //   isMagic: true,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: false,
+  // },
+  // {
+  //   id: 'mushroom2',
+  //   name: 'Purple Jellydisc',
+  //   description: 'trippy',
+  //   imgUrl: 'https://www.pngkey.com/png/full/94-946683_purple-mario-mushroom-mario-bros-purple-mushroom.png',
+  //   isMagic: false,
+  //   isPoisonous: true,
+  //   isDeadly: false,
+  //   isNormal: false,
+  // },
+  // {
+  //   id: 'mushroom3',
+  //   name: 'Witche\'s Butter',
+  //   description: 'psychedilic',
+  //   // eslint-disable-next-line max-len
+  //   imgUrl: 'https://vignette.wikia.nocookie.net/mario/images/d/da/1206px-SMP_Poison_Mushroom.png/revision/latest?cb=20190506154457',
+  //   isMagic: false,
+  //   isPoisonous: true,
+  //   isDeadly: false,
+  //   isNormal: false,
+  // },
+  // {
+  //   id: 'mushroom4',
+  //   name: 'Bitter Poisonpie',
+  //   description: 'mind-expanding',
+  //   imgUrl: 'https://vignette.wikia.nocookie.net/super-mario-kart-racing/images/9/97/Poison_Mushroom_-_Super_Mario_Kart.png/revision/latest?cb=20170502002407',
+  //   isMagic: false,
+  //   isPoisonous: true,
+  //   isDeadly: false,
+  //   isNormal: false,
+  // },
+  // {
+  //   id: 'mushroom5',
+  //   name: 'Funeral Bell',
+  //   description: 'death-dealing',
+  //   imgUrl: 'https://vignette.wikia.nocookie.net/mariobrosfanon/images/4/4c/20101027014858%21PoisonMushroom-1-.png/revision/latest?cb=20120604154053',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: true,
+  //   isNormal: false,
+  // },
+  // {
+  //   id: 'mushroom6',
+  //   name: 'Dewdrop Dapperling',
+  //   description: 'friendly',
+  //   imgUrl: 'https://i.pinimg.com/originals/88/bb/df/88bbdf4b6c0d0eb503ffbcdc8e6e48b4.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
   {
     id: 'mushroom7',
     name: 'Pink Disco',
@@ -64,6 +70,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom8',
@@ -73,6 +80,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom9',
@@ -82,6 +90,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom10',
@@ -91,6 +100,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom11',
@@ -100,6 +110,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom12',
@@ -109,6 +120,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom13',
@@ -119,6 +131,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom14',
@@ -128,6 +141,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom15',
@@ -137,6 +151,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom16',
@@ -146,6 +161,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom17',
@@ -155,6 +171,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom18',
@@ -164,6 +181,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom19',
@@ -173,6 +191,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom20',
@@ -182,6 +201,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
 ];
 const getMushrooms = () => mushrooms;
@@ -190,31 +210,14 @@ const getBasket = () => basket;
 
 const getNormalMushrooms = () => {
   const normalMushrooms = [];
-  const mushroomsNow = getMushrooms();
-  mushroomsNow.forEach((item) => {
-    if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
-      normalMushrooms.push(item);
+  const normalForestMushrooms = getMushrooms();
+  normalForestMushrooms.forEach((mushroom) => {
+    if (mushroom.isNormal === true) {
+      normalMushrooms.push(mushroom);
     }
   });
-  console.log('This is the array of normal mushrooms', normalMushrooms.length);
   return normalMushrooms.length;
 };
-
-const getBasketTotal = () => {
-  let totalMushroomsInBasket = 0;
-  basket.forEach((item) => {
-    totalMushroomsInBasket += item.quantity;
-  });
-  console.log('this is the total number mushrooms in basket', totalMushroomsInBasket);
-  // checkForWin();
-  return totalMushroomsInBasket;
-};
-// const checkForWin = (mushrooms, basket) => {
-//   const isTrue(arr, arr2) {
-//     arr.every(i => arr2.includes(i));
-//   }
-//   console.log(isTrue())
-// }
 
 const pickedPoisonousMushroom = (passedInTotal) => {
   const total = passedInTotal;
@@ -243,25 +246,11 @@ const pickedPoisonousMushroom = (passedInTotal) => {
   } else {
     basket = [];
   }
-  getBasketTotal();
 };
 
-const pickedMagicMushroom = () => {
-  mushrooms.forEach((item) => {
-    if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
-      runBasketCheck(item);
-    }
-  });
-  getBasketTotal();
-};
-
-const youWin = () => {
-  console.log('YOU WIN');
-};
-
-const runBasketCheck = (mushroom) => {
-  const totalBasketLength = basket.length;
+const gathered = (mushroom) => {
   const selectedMushroom = mushroom;
+  const totalNormalMushrooms = getNormalMushrooms();
   const findSelected = basket.findIndex((x) => x.id === selectedMushroom.id);
   if (findSelected >= 0) {
     basket[findSelected].quantity += 1;
@@ -269,31 +258,25 @@ const runBasketCheck = (mushroom) => {
     selectedMushroom.quantity = 1;
     basket.push(selectedMushroom);
   }
-  console.log('this is the total basket.length', totalBasketLength);
-  if (totalBasketLength === 14) {
-    youWin();
+  if (basket.length === totalNormalMushrooms) {
+    basket = [];
   }
-  getBasketTotal();
 };
 
 const pickAMushroom = () => {
-  const total = getBasketTotal();
-  const normalTotal = getNormalMushrooms();
-  console.log('this is the normalTotal', normalTotal);
-  console.log('this is the total number of normal mushrooms', normalTotal);
-  const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  const forestMushrooms = mushrooms.length;
+  const totalInBasket = basket.length;
+  const pickedMushroom = mushrooms[Math.floor(Math.random() * forestMushrooms)];
   if (pickedMushroom.isPoisonous) {
-    console.log('AHHHHHH Picked Poison Mushroom');
-    pickedPoisonousMushroom(total);
+    pickedPoisonousMushroom(totalInBasket);
   } else if (pickedMushroom.isDeadly) {
-    console.log('Deadly Mushroom killed all others');
     basket = [];
   } else if (pickedMushroom.isMagic) {
-    console.log('picked magical mushroom');
-    pickedMagicMushroom();
+    basket = [];
   } else {
-    runBasketCheck(pickedMushroom);
+    gathered(pickedMushroom);
   }
+
   return pickedMushroom;
 };
 
@@ -302,6 +285,5 @@ export default
   getMushrooms,
   getBasket,
   pickAMushroom,
-  getBasketTotal,
   getNormalMushrooms,
 };

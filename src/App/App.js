@@ -31,7 +31,7 @@ class App extends React.Component {
   pickAMushroomEvent = (e) => {
     const currentMushroom = mushroomData.pickAMushroom();
     const basket = mushroomData.getBasket();
-    this.setState({ basket, currentMushroom }, console.log('RENDER', this.state.currentMushroom));
+    this.setState({ basket, currentMushroom });
   }
 
   render() {
@@ -39,8 +39,6 @@ class App extends React.Component {
     const { basket } = this.state;
     const { currentMushroom } = this.state;
     const { totalNormalMushrooms } = this.state;
-    console.log('this is the normal Mushrooms total in Apps', totalNormalMushrooms);
-
     let modal = '';
     if (currentMushroom.isPoisonous) {
       modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalPoisonous currentMushroom={currentMushroom}/></div>;
@@ -66,7 +64,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="col-9">
-            <Basket className="m-0 p-0 basket" basket={basket}/>
+            <Basket className="m-0 p-0 basket" basket={basket} totalNormalMushrooms={totalNormalMushrooms}/>
           </div>
           <div className="row">
             <div>

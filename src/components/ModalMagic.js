@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 import './Modal.scss';
 
-const ModalDeadly = (props) => {
+const ModalMagic = (props) => {
   const [open, setOpen] = useState(true);
   const [focusAfterClose] = useState(true);
   const { currentMushroom } = props;
@@ -24,7 +24,7 @@ const ModalDeadly = (props) => {
                 <h3 className="modal-p m-1">You picked a Magic Mushroom</h3>
                 <h3 className="modal-p m-1">One of each NORMAL mushroom added to the Basket</h3>
                 <h2 className="modal-p m-0">You WIN!</h2>
-                <div><Button className="btn btn-danger m-1" onClick={toggle}>Close</Button></div>
+                <div><Button className="btn btn-danger m-1" onClick={toggle}>Play Again</Button></div>
                 <img className="card-img-top magic" src={currentMushroom.imgUrl} alt={currentMushroom.name}/>
                   <div className="m-4">
                   </div>
@@ -35,4 +35,4 @@ const ModalDeadly = (props) => {
   );
 };
 
-export default ModalDeadly;
+export default ModalMagic;
