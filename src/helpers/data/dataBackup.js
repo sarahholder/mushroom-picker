@@ -23,7 +23,10 @@ const getBasketTotal = (normalTotal) => {
     console.log('TOTAL BASKET REACH 15');
     basket = [];
   }
+
 };
+style="position:absolute"
+style="width:100%;height:0;padding-bottom:99%;position:relative;"
 // const checkForWin = (mushrooms, basket) => {
 //   const isTrue(arr, arr2) {
 //     arr.every(i => arr2.includes(i));

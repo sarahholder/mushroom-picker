@@ -9,6 +9,7 @@ import Basket from '../components/Basket';
 import ModalPoisonous from '../components/ModalPoisonous';
 import ModalDeadly from '../components/ModalDeadly';
 import ModalMagic from '../components/ModalMagic';
+import ModalFullBasket from '../components/ModalFullBasket';
 
 class App extends React.Component {
   state = {
@@ -47,7 +48,9 @@ class App extends React.Component {
     } else if (currentMushroom.isMagic) {
       modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalMagic currentMushroom={currentMushroom}/></div>;
     } else if (basket.length === totalNormalMushrooms) {
-      modal = 'Basket is FULL';
+      console.log('THIS IS THE BASKET LENGTH', basket.length);
+      console.log('THIS IS THE TOTAL MUSHROOMS', totalNormalMushrooms);
+      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalFullBasket currentMushroom={currentMushroom}/></div>;
     }
 
     return (
