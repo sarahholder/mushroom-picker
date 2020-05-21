@@ -20,10 +20,13 @@ const ModalFullBasket = (props) => {
               {
                   currentMushroom.isMagic ? (
                   <div>
-                    <h2 className="m-1 modal-h2">{currentMushroom.name}</h2><h3 className="modal-p m-1"> Magic Mushroom</h3></div>) : (
+                    <h2 className="m-1 modal-h2">{currentMushroom.name}</h2>
+                    <h3 className="modal-p m-1"> Magic Mushroom</h3>
+                    <h3 className="modal-p m-1">The magic mushroom finished filling the basket!</h3>
+                    </div>) : (
                   <div>
                     <h2 className="m-1 modal-h2">FULL Basket</h2>
-                    <h3 className="modal-p m-1">You collect one of each types of mushrooms in the forest.</h3>
+                    <h3 className="modal-p m-1">One of each types of normal mushrooms from the forest collected.</h3>
                     </div>)
                 }
                 <h2 className="modal-p m-0">You WIN!</h2>
