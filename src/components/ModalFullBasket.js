@@ -3,7 +3,6 @@ import {
   Modal,
   ModalBody,
 } from 'reactstrap';
-// import mushroomData from '../helpers/data/mushroomData';
 import './Modal.scss';
 
 const ModalFullBasket = (props) => {

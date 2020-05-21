@@ -1,16 +1,16 @@
 let basket = [];
 
 const mushrooms = [
-  // {
-  //   id: 'mushroom1',
-  //   name: 'Psilocybe',
-  //   description: 'magic',
-  //   imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
-  //   isMagic: true,
-  //   isPoisonous: false,
-  //   isDeadly: false,
-  //   isNormal: false,
-  // },
+  {
+    id: 'mushroom1',
+    name: 'Psilocybe',
+    description: 'magic',
+    imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
+    isMagic: true,
+    isPoisonous: false,
+    isDeadly: false,
+    isNormal: false,
+  },
   {
     id: 'mushroom2',
     name: 'Purple Jellydisc',
@@ -23,7 +23,7 @@ const mushrooms = [
   },
   {
     id: 'mushroom3',
-    name: 'Witche\'s Butter',
+    name: 'Witches\' Butter',
     description: 'psychedilic',
     // eslint-disable-next-line max-len
     imgUrl: 'https://vignette.wikia.nocookie.net/mario/images/d/da/1206px-SMP_Poison_Mushroom.png/revision/latest?cb=20190506154457',
@@ -42,16 +42,16 @@ const mushrooms = [
     isDeadly: false,
     isNormal: false,
   },
-  // {
-  //   id: 'mushroom5',
-  //   name: 'Funeral Bell',
-  //   description: 'death-dealing',
-  //   imgUrl: 'https://vignette.wikia.nocookie.net/mariobrosfanon/images/4/4c/20101027014858%21PoisonMushroom-1-.png/revision/latest?cb=20120604154053',
-  //   isMagic: false,
-  //   isPoisonous: false,
-  //   isDeadly: true,
-  //   isNormal: false,
-  // },
+  {
+    id: 'mushroom5',
+    name: 'Funeral Bell',
+    description: 'death-dealing',
+    imgUrl: 'https://vignette.wikia.nocookie.net/mariobrosfanon/images/4/4c/20101027014858%21PoisonMushroom-1-.png/revision/latest?cb=20120604154053',
+    isMagic: false,
+    isPoisonous: false,
+    isDeadly: true,
+    isNormal: false,
+  },
   {
     id: 'mushroom6',
     name: 'Dewdrop Dapperling',
@@ -266,11 +266,10 @@ const gathered = (mushroom) => {
   if (basket.length === totalNormalMushrooms) {
     fullBasket = true;
   }
-  console.log('This is the gathered full basket', fullBasket);
   return fullBasket;
 };
+
 const pickedMagicMushroom = () => {
-  console.log('I made it');
   mushrooms.forEach((mushroom) => {
     if (mushroom.isPoisonous === false && mushroom.isDeadly === false && mushroom.isMagic === false) {
       const findSelected = basket.findIndex((x) => x.id === mushroom.id);
@@ -295,7 +294,6 @@ const pickAMushroom = () => {
     basket = [];
   } else if (pickedMushroom.isMagic) {
     pickedMagicMushroom();
-    console.log('I FOUND MY WAY');
   } else {
     gathered(pickedMushroom);
   }
