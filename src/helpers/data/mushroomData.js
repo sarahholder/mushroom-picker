@@ -1,16 +1,16 @@
 let basket = [];
 
 const mushrooms = [
-  // {
-  //   id: 'mushroom1',
-  //   name: 'Psilocybe',
-  //   description: 'magic',
-  //   imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
-  //   isMagic: true,
-  //   isPoisonous: false,
-  //   isDeadly: false,
-  //   isNormal: false,
-  // },
+  {
+    id: 'mushroom1',
+    name: 'Psilocybe',
+    description: 'magic',
+    imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
+    isMagic: true,
+    isPoisonous: false,
+    isDeadly: false,
+    isNormal: false,
+  },
   // {
   //   id: 'mushroom2',
   //   name: 'Purple Jellydisc',
@@ -62,117 +62,117 @@ const mushrooms = [
   //   isDeadly: false,
   //   isNormal: true,
   // },
-  {
-    id: 'mushroom7',
-    name: 'Pink Disco',
-    description: 'pleasant',
-    imgUrl: 'https://vignette.wikia.nocookie.net/ssb/images/0/0f/Toadette-Official-Artwork-NSMBUD.png/revision/latest?cb=20190404223130',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom8',
-    name: 'Cinnamon Jellybaby',
-    description: 'plain',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/9/94/MushroomMarioKart8.png/1206px-MushroomMarioKart8.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom9',
-    name: 'Barometer Earthstar',
-    description: 'starry',
-    imgUrl: 'https://www.freeiconspng.com/uploads/mushroom-icon-29.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom10',
-    name: 'Bonfire Cauliflower',
-    description: 'fiery',
-    imgUrl: 'https://vignette.wikia.nocookie.net/mario/images/b/bf/Mega_Mushroom_MTUS.png/revision/latest?cb=20180114232455',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom11',
-    name: 'Bug Sputnik',
-    description: 'sad',
-    imgUrl: 'https://webstockreview.net/images/mushroom-clipart-blue-mushroom-5.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom12',
-    name: 'Hairy Parachute',
-    description: 'falling',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/8/85/Parabomb_NSMBUD.png/1200px-Parabomb_NSMBUD.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom13',
-    name: 'Goblet Parachute',
-    description: 'crafty',
-    // eslint-disable-next-line max-len
-    imgUrl: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd9b85bb-f709-41fb-8666-da35e37527e0/ddfc873-a102ad52-b30b-49d9-9f95-27a751652ccc.png/v1/fill/w_1280,h_1146,strp/propeller_mushroom___mario_kart_wii_by_hammerbro101_ddfc873-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE0NiIsInBhdGgiOiJcL2ZcL2NkOWI4NWJiLWY3MDktNDFmYi04NjY2LWRhMzVlMzc1MjdlMFwvZGRmYzg3My1hMTAyYWQ1Mi1iMzBiLTQ5ZDktOWY5NS0yN2E3NTE2NTJjY2MucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.bSgtJt0K6qygYTwsatTAt86Lp0f5qdVujLK6dRT3i2E',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom14',
-    name: 'Destroying Angel',
-    description: 'saint',
-    imgUrl: 'https://www.pinclipart.com/picdir/big/421-4213258_paragoomba-in-flight-mushroom-head-mario-clipart.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom15',
-    name: 'Mint Mildew',
-    description: 'lifesaver',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/b/b4/1-Up_Mushroom_Artwork_-_Super_Mario_3D_World.png/1200px-1-Up_Mushroom_Artwork_-_Super_Mario_3D_World.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom16',
-    name: 'Whiskery Milkcap',
-    description: 'fun',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/a/a9/Yellow_Toad_New_Super_Mario_Bros_U_Deluxe.png/1200px-Yellow_Toad_New_Super_Mario_Bros_U_Deluxe.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
-  {
-    id: 'mushroom17',
-    name: 'The Pretender',
-    description: 'shifty',
-    imgUrl: 'https://webstockreview.net/images/clipart-clouds-mario-bros-19.png',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: true,
-  },
+  // {
+  //   id: 'mushroom7',
+  //   name: 'Pink Disco',
+  //   description: 'pleasant',
+  //   imgUrl: 'https://vignette.wikia.nocookie.net/ssb/images/0/0f/Toadette-Official-Artwork-NSMBUD.png/revision/latest?cb=20190404223130',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom8',
+  //   name: 'Cinnamon Jellybaby',
+  //   description: 'plain',
+  //   imgUrl: 'https://www.mariowiki.com/images/thumb/9/94/MushroomMarioKart8.png/1206px-MushroomMarioKart8.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom9',
+  //   name: 'Barometer Earthstar',
+  //   description: 'starry',
+  //   imgUrl: 'https://www.freeiconspng.com/uploads/mushroom-icon-29.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom10',
+  //   name: 'Bonfire Cauliflower',
+  //   description: 'fiery',
+  //   imgUrl: 'https://vignette.wikia.nocookie.net/mario/images/b/bf/Mega_Mushroom_MTUS.png/revision/latest?cb=20180114232455',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom11',
+  //   name: 'Bug Sputnik',
+  //   description: 'sad',
+  //   imgUrl: 'https://webstockreview.net/images/mushroom-clipart-blue-mushroom-5.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom12',
+  //   name: 'Hairy Parachute',
+  //   description: 'falling',
+  //   imgUrl: 'https://www.mariowiki.com/images/thumb/8/85/Parabomb_NSMBUD.png/1200px-Parabomb_NSMBUD.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom13',
+  //   name: 'Goblet Parachute',
+  //   description: 'crafty',
+  //   // eslint-disable-next-line max-len
+  //   imgUrl: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd9b85bb-f709-41fb-8666-da35e37527e0/ddfc873-a102ad52-b30b-49d9-9f95-27a751652ccc.png/v1/fill/w_1280,h_1146,strp/propeller_mushroom___mario_kart_wii_by_hammerbro101_ddfc873-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE0NiIsInBhdGgiOiJcL2ZcL2NkOWI4NWJiLWY3MDktNDFmYi04NjY2LWRhMzVlMzc1MjdlMFwvZGRmYzg3My1hMTAyYWQ1Mi1iMzBiLTQ5ZDktOWY5NS0yN2E3NTE2NTJjY2MucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.bSgtJt0K6qygYTwsatTAt86Lp0f5qdVujLK6dRT3i2E',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom14',
+  //   name: 'Destroying Angel',
+  //   description: 'saint',
+  //   imgUrl: 'https://www.pinclipart.com/picdir/big/421-4213258_paragoomba-in-flight-mushroom-head-mario-clipart.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom15',
+  //   name: 'Mint Mildew',
+  //   description: 'lifesaver',
+  //   imgUrl: 'https://www.mariowiki.com/images/thumb/b/b4/1-Up_Mushroom_Artwork_-_Super_Mario_3D_World.png/1200px-1-Up_Mushroom_Artwork_-_Super_Mario_3D_World.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom16',
+  //   name: 'Whiskery Milkcap',
+  //   description: 'fun',
+  //   imgUrl: 'https://www.mariowiki.com/images/thumb/a/a9/Yellow_Toad_New_Super_Mario_Bros_U_Deluxe.png/1200px-Yellow_Toad_New_Super_Mario_Bros_U_Deluxe.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
+  // {
+  //   id: 'mushroom17',
+  //   name: 'The Pretender',
+  //   description: 'shifty',
+  //   imgUrl: 'https://webstockreview.net/images/clipart-clouds-mario-bros-19.png',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: true,
+  // },
   {
     id: 'mushroom18',
     name: 'Chicken of the Woods',
@@ -207,6 +207,10 @@ const mushrooms = [
 const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
+
+const emptyBasket = () => {
+  basket = [];
+};
 
 const getNormalMushrooms = () => {
   const normalMushrooms = [];
@@ -251,6 +255,7 @@ const pickedPoisonousMushroom = (passedInTotal) => {
 const gathered = (mushroom) => {
   const selectedMushroom = mushroom;
   const totalNormalMushrooms = getNormalMushrooms();
+  let fullBasket = false;
   const findSelected = basket.findIndex((x) => x.id === selectedMushroom.id);
   if (findSelected >= 0) {
     basket[findSelected].quantity += 1;
@@ -259,8 +264,27 @@ const gathered = (mushroom) => {
     basket.push(selectedMushroom);
   }
   if (basket.length === totalNormalMushrooms) {
-    basket = [];
+    fullBasket = true;
   }
+  console.log('This is the gathered full basket', fullBasket);
+  return fullBasket;
+};
+const pickedMagicMushroom = () => {
+  console.log('I made it');
+  mushrooms.forEach((mushroom) => {
+    if (mushroom.isPoisonous === false && mushroom.isDeadly === false && mushroom.isMagic === false) {
+      const findSelected = basket.findIndex((x) => x.id === mushroom.id);
+      console.log('find selected', findSelected);
+      if (findSelected > 0) {
+        const updatedMush = mushroom;
+        updatedMush.quantity += 1;
+      } else {
+        const newMush = mushroom;
+        newMush.quantity = 1;
+        basket.push(newMush);
+      }
+    }
+  });
 };
 
 const pickAMushroom = () => {
@@ -272,7 +296,8 @@ const pickAMushroom = () => {
   } else if (pickedMushroom.isDeadly) {
     basket = [];
   } else if (pickedMushroom.isMagic) {
-    basket = [];
+    pickedMagicMushroom();
+    console.log('I FOUND MY WAY');
   } else {
     gathered(pickedMushroom);
   }
@@ -286,4 +311,6 @@ export default
   getBasket,
   pickAMushroom,
   getNormalMushrooms,
+  gathered,
+  emptyBasket,
 };

@@ -8,7 +8,6 @@ import Forest from '../components/Forest';
 import Basket from '../components/Basket';
 import ModalPoisonous from '../components/ModalPoisonous';
 import ModalDeadly from '../components/ModalDeadly';
-import ModalMagic from '../components/ModalMagic';
 import ModalFullBasket from '../components/ModalFullBasket';
 
 class App extends React.Component {
@@ -29,38 +28,53 @@ class App extends React.Component {
     this.setState({ totalNormalMushrooms });
   }
 
+  restart = (e) => {
+    e.preventDefault();
+    this.setState({
+      mushroom: [],
+      basket: [],
+      currentMushroom: {},
+    });
+    mushroomData.emptyBasket();
+    mushroomData.getBasket();
+    mushroomData.getMushrooms();
+  }
+
+
   pickAMushroomEvent = (e) => {
+    e.preventDefault();
     const currentMushroom = mushroomData.pickAMushroom();
     const basket = mushroomData.getBasket();
     this.setState({ basket, currentMushroom });
+    console.log(currentMushroom.name);
   }
 
   render() {
     const { mushrooms } = this.state;
-    const { basket } = this.state;
     const { currentMushroom } = this.state;
+    const { basket } = this.state;
     const { totalNormalMushrooms } = this.state;
+
     let modal = '';
     if (currentMushroom.isPoisonous) {
       modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalPoisonous currentMushroom={currentMushroom}/></div>;
     } else if (currentMushroom.isDeadly) {
       modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalDeadly currentMushroom={currentMushroom}/></div>;
-    } else if (currentMushroom.isMagic) {
-      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalMagic currentMushroom={currentMushroom}/></div>;
-    } else if (basket.length === totalNormalMushrooms) {
-      console.log('THIS IS THE BASKET LENGTH', basket.length);
-      console.log('THIS IS THE TOTAL MUSHROOMS', totalNormalMushrooms);
-      modal = <div className="d-flex flex-wrap justify-content-center align-items-center"><ModalFullBasket currentMushroom={currentMushroom}/></div>;
     }
 
     return (
       <div className="App justify-content-center ml-5 mr-5">
           {modal}
+      {
+        basket.length >= totalNormalMushrooms ? (<div className="d-flex flex-wrap justify-content-center align-items-center"><ModalFullBasket totalNormalMushrooms={totalNormalMushrooms} currentMushroom={currentMushroom}/></div>) : (<div></div>)
+      }
       <h1>MUSHROOM MANIA</h1>
         <div className="d-flex flex-wrap align-content-center">
           <div className="row col-3 justify-content-center d-flex flex-wrap">
             <div>
-              <button className="btn btn-danger m-2" onClick={this.pickAMushroomEvent}>PICK MUSHROOM</button>
+              {
+              basket.length !== totalNormalMushrooms || basket.length === 0 ? (<button className="btn btn-danger m-2" onClick={this.pickAMushroomEvent}>PICK MUSHROOM</button>) : (<button className="btn btn-danger ml-4 mr-4 mt-2 mb-2 " onClick={this.restart}>RESTART</button>)
+              }
             </div>
             <div>
               <img className="mario" src='https://www.mariowiki.com/images/thumb/e/eb/Mario_Artwork_-_Mario_Party_4.png/200px-Mario_Artwork_-_Mario_Party_4.png' alt='mario'></img>
