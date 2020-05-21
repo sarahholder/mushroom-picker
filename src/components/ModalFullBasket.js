@@ -26,7 +26,7 @@ const ModalFullBasket = (props) => {
                     </div>) : (
                   <div>
                     <h2 className="m-1 modal-h2">FULL Basket</h2>
-                    <h3 className="modal-p m-1">One of each types of normal mushrooms from the forest collected.</h3>
+                    <h3 className="modal-p m-1">One of each type of normal mushrooms collected.</h3>
                     </div>)
                 }
                 <h2 className="modal-p m-0">You WIN!</h2>
