@@ -1,0 +1,74 @@
+.modal, .modal-body {
+  text-align: center;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+.modal-h2{
+  color: white;
+}
+
+.modal-p{
+  color: white;
+  font-size: 2vw;
+}
+.modal-img {
+  height: 500px;
+  width: auto;
+}
+.bowser {
+  -webkit-animation: anim 10s infinite;
+  animation: anim 10s infinite;
+  height: 500px;
+  width: auto;
+  -webkit-filter: drop-shadow(5px 5px 5px rgb(191, 18, 18)); filter: drop-shadow(5px 5px 5px #650e0e);
+}
+
+.magic {
+  -webkit-animation: anim 10s infinite;
+  animation: anim 10s infinite;
+  height: 400px;
+  width: auto;
+  -webkit-filter: drop-shadow(5px 5px 5px rgb(255, 255, 255)); filter: drop-shadow(5px 5px 5px #ffffff);
+}
+
+.deadly {
+  width: 50px;
+  height: auto;
+}
+.mario-clap {
+  height: 400px;
+  width: auto;
+  border: none;
+}
+.mario-clap {
+  margin: auto;
+  width: 60vh;
+  height: 70vh;
+  background-image: url(https://i.pinimg.com/originals/0e/54/90/0e549057b57fe86dc20202fff15eed63.png);
+  background-size: 80% 80%;
+  background-position: center center;
+  animation: shrink .2s infinite alternate;
+  -webkit-filter: drop-shadow(5px 5px 5px rgb(255, 255, 255)); filter: drop-shadow(0px 0px 100px #ffffff);
+  
+}
+@keyframes shrink {
+  0% {
+    background-size: 98% 98%;
+  }
+  100% {
+    background-size: 102% 102%;
+  }
+}
+
+@-webkit-keyframes anim {
+  from {-webkit-transform: rotateY(0deg);}
+  to {-webkit-transform: rotateY(360deg);}
+}
+
+@keyframes anim {
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(360deg);}
+}

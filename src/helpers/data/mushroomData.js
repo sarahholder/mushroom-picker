@@ -4,11 +4,12 @@ const mushrooms = [
   {
     id: 'mushroom1',
     name: 'Psilocybe',
-    description: 'magical',
+    description: 'magic',
     imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
     isMagic: true,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: false,
   },
   {
     id: 'mushroom2',
@@ -18,6 +19,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: true,
     isDeadly: false,
+    isNormal: false,
   },
   {
     id: 'mushroom3',
@@ -28,6 +30,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: true,
     isDeadly: false,
+    isNormal: false,
   },
   {
     id: 'mushroom4',
@@ -37,6 +40,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: true,
     isDeadly: false,
+    isNormal: false,
   },
   {
     id: 'mushroom5',
@@ -46,6 +50,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: true,
+    isNormal: false,
   },
   {
     id: 'mushroom6',
@@ -55,6 +60,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom7',
@@ -64,6 +70,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom8',
@@ -73,6 +80,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom9',
@@ -82,6 +90,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom10',
@@ -91,6 +100,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom11',
@@ -100,6 +110,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom12',
@@ -109,6 +120,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom13',
@@ -119,6 +131,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom14',
@@ -128,6 +141,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom15',
@@ -137,6 +151,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom16',
@@ -146,6 +161,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom17',
@@ -155,6 +171,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom18',
@@ -164,6 +181,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom19',
@@ -173,6 +191,7 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
   {
     id: 'mushroom20',
@@ -182,40 +201,37 @@ const mushrooms = [
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,
+    isNormal: true,
   },
 ];
 const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-const getBasketTotal = () => {
-  let totalMushroomsInBasket = 0;
-  basket.forEach((item) => {
-    totalMushroomsInBasket += item.quantity;
-  });
-  console.log('this is the total number mushrooms in basket', totalMushroomsInBasket);
-  getBasket();
-  return totalMushroomsInBasket;
+const emptyBasket = () => {
+  basket = [];
 };
-// const checkForWin = () => {
-//   if (basket.length >= 15) {
-//     getBasket();
-//   }
-// }
+
+const getNormalMushrooms = () => {
+  const normalMushrooms = [];
+  const normalForestMushrooms = getMushrooms();
+  normalForestMushrooms.forEach((mushroom) => {
+    if (mushroom.isNormal === true) {
+      normalMushrooms.push(mushroom);
+    }
+  });
+  return normalMushrooms.length;
+};
 
 const pickedPoisonousMushroom = (passedInTotal) => {
   const total = passedInTotal;
-  console.log('this is the total', total);
-  console.log('This is what is in the basket before poisonous mushroom picked', basket);
   if (total >= 3) {
     const mushroomToDie1 = basket[Math.floor(Math.random() * basket.length)];
     const mushroomToDieIndex1 = basket.indexOf(mushroomToDie1);
-    console.log('selected to remove', mushroomToDie1);
     if (mushroomToDie1.quantity > 1) {
       mushroomToDie1.quantity -= 1;
       const mushroomToDie2 = basket[Math.floor(Math.random() * basket.length)];
       const mushroomToDieIndex2 = basket.indexOf(mushroomToDie2);
-      console.log('selected to remove #2', mushroomToDie2);
       if (mushroomToDie2.quantity > 1) {
         mushroomToDie2.quantity -= 1;
       } else {
@@ -225,7 +241,6 @@ const pickedPoisonousMushroom = (passedInTotal) => {
       basket.splice(mushroomToDieIndex1, 1);
       const mushroomToDie2 = basket[Math.floor(Math.random() * basket.length)];
       const mushroomToDieIndex2 = basket.indexOf(mushroomToDie2);
-      console.log('selected to remove #2', mushroomToDie2);
       if (mushroomToDie2.quantity > 1) {
         mushroomToDie2.quantity -= 1;
       } else {
@@ -235,47 +250,57 @@ const pickedPoisonousMushroom = (passedInTotal) => {
   } else {
     basket = [];
   }
-  getBasketTotal();
 };
 
-const pickedMagicMushroom = () => {
-  console.log('picked magic mushroom :)');
-  mushrooms.forEach((item) => {
-    if (item.isDeadly === false && item.isPoisonous === false && item.isMagic === false) {
-      runBasketCheck(item);
-    }
-  });
-  getBasketTotal();
-};
-
-const runBasketCheck = (mushroom) => {
+const gathered = (mushroom) => {
   const selectedMushroom = mushroom;
+  const totalNormalMushrooms = getNormalMushrooms();
+  let fullBasket = false;
   const findSelected = basket.findIndex((x) => x.id === selectedMushroom.id);
   if (findSelected >= 0) {
     basket[findSelected].quantity += 1;
-    getBasketTotal();
   } else {
     selectedMushroom.quantity = 1;
     basket.push(selectedMushroom);
-    getBasketTotal();
   }
+  if (basket.length === totalNormalMushrooms) {
+    fullBasket = true;
+  }
+  console.log('This is the gathered full basket', fullBasket);
+  return fullBasket;
+};
+const pickedMagicMushroom = () => {
+  console.log('I made it');
+  mushrooms.forEach((mushroom) => {
+    if (mushroom.isPoisonous === false && mushroom.isDeadly === false && mushroom.isMagic === false) {
+      const findSelected = basket.findIndex((x) => x.id === mushroom.id);
+      if (findSelected >= 0) {
+        basket[findSelected].quantity += 1;
+      } else {
+        const newMush = mushroom;
+        newMush.quantity = 1;
+        basket.push(mushroom);
+      }
+    }
+  });
 };
 
 const pickAMushroom = () => {
-  const total = getBasketTotal();
-  const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  const forestMushrooms = mushrooms.length;
+  const totalInBasket = basket.length;
+  const pickedMushroom = mushrooms[Math.floor(Math.random() * forestMushrooms)];
   if (pickedMushroom.isPoisonous) {
-    console.log('AHHHHHH Picked Poison Mushroom');
-    pickedPoisonousMushroom(total);
+    pickedPoisonousMushroom(totalInBasket);
   } else if (pickedMushroom.isDeadly) {
-    console.log('Deadly Mushroom killed all others');
     basket = [];
   } else if (pickedMushroom.isMagic) {
-    console.log('picked magical mushroom');
     pickedMagicMushroom();
+    console.log('I FOUND MY WAY');
   } else {
-    runBasketCheck(pickedMushroom);
+    gathered(pickedMushroom);
   }
+
+  return pickedMushroom;
 };
 
 export default
@@ -283,5 +308,7 @@ export default
   getMushrooms,
   getBasket,
   pickAMushroom,
-  getBasketTotal,
+  getNormalMushrooms,
+  gathered,
+  emptyBasket,
 };

@@ -27,6 +27,9 @@ class Mushroom extends React.Component {
             <h3>{icon}</h3>
             <h4>{mushroom.name}</h4>
             <p>{mushroom.description}</p>
+            {
+            mushroom.isNormal ? (<p>Normal</p>) : (<p></p>)
+            }
           </div>
         </div>
       </div>
