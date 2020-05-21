@@ -1,16 +1,16 @@
 let basket = [];
 
 const mushrooms = [
-  {
-    id: 'mushroom1',
-    name: 'Psilocybe',
-    description: 'magic',
-    imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
-    isMagic: true,
-    isPoisonous: false,
-    isDeadly: false,
-    isNormal: false,
-  },
+  // {
+  //   id: 'mushroom1',
+  //   name: 'Psilocybe',
+  //   description: 'magic',
+  //   imgUrl: 'https://www.mariowiki.com/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png',
+  //   isMagic: true,
+  //   isPoisonous: false,
+  //   isDeadly: false,
+  //   isNormal: false,
+  // },
   {
     id: 'mushroom2',
     name: 'Purple Jellydisc',
@@ -42,16 +42,16 @@ const mushrooms = [
     isDeadly: false,
     isNormal: false,
   },
-  {
-    id: 'mushroom5',
-    name: 'Funeral Bell',
-    description: 'death-dealing',
-    imgUrl: 'https://vignette.wikia.nocookie.net/mariobrosfanon/images/4/4c/20101027014858%21PoisonMushroom-1-.png/revision/latest?cb=20120604154053',
-    isMagic: false,
-    isPoisonous: false,
-    isDeadly: true,
-    isNormal: false,
-  },
+  // {
+  //   id: 'mushroom5',
+  //   name: 'Funeral Bell',
+  //   description: 'death-dealing',
+  //   imgUrl: 'https://vignette.wikia.nocookie.net/mariobrosfanon/images/4/4c/20101027014858%21PoisonMushroom-1-.png/revision/latest?cb=20120604154053',
+  //   isMagic: false,
+  //   isPoisonous: false,
+  //   isDeadly: true,
+  //   isNormal: false,
+  // },
   {
     id: 'mushroom6',
     name: 'Dewdrop Dapperling',
