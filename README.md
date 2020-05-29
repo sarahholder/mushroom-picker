@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mushroom Mania
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Time to help Mario collect one of each mushroom in the forest. Using React under the hood to make the magic happen. This project was an introductory project to React. Focusing on data and components for a better understand of how data is minipulated, communicated and displayed using React.
 
-### `npm start`
+<strong> Project specifications found [here. </strong>](https://github.com/nss-nightclass-projects/exercise-vault/blob/master/REACT_mushroom_picker.md)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies & Tools
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- React, Reactstrap, Bootstrap, CSS, ES6, HTML, JavaScript (vanilla), Webpack
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Start Screen**
 
-### `npm run build`
+![Begin Mushroom Mania](screenshots/mushroomStartScreen.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Pick a Magic Mushroom](screenshots/magicMushroom.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Pick a Poisonous Mushroom](screenshots/poisonousMushroom.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Collect a Full Basket](screenshots/fullBasketWin.png)
 
-### `npm run eject`
+![Collect a Full Basket Win](screenshots/fullBasketWin.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Full Basket Restart](screenshots/fullBasketRestartScreen.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Pick a Deadly Mushroom](screenshots/deadlyMushroom.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Or run locally:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Install npm http-server [Click here for instructions](https://www.npmjs.com/package/http-server)
 
-## Learn More
+2. [Clone project](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Open file
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Run command: `npm install`
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+5. Run command: `hs -p 8080`

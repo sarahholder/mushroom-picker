@@ -9,11 +9,6 @@ class Basket extends React.Component {
   }
 
   render() {
-  // let functionCalls = 0;
-  // const countFunction = () => {
-  //   functionCalls += 1;
-  //   return functionCalls;
-  // };
     const { basket } = this.props;
     const { totalNormalMushrooms } = this.props;
 
@@ -25,7 +20,6 @@ class Basket extends React.Component {
       return totalMushrooms;
     };
     const buildBasket = basket.map((mushroom, index) => (
-      // <Mushroom key={`selectedMushroom + ${countFunction()}`} id={`selectedMushroom${countFunction()}`} mushroom={mushroom}/>
       <BasketMushroom key={`basket-${mushroom.id}`} mushroom={mushroom}/>
     ));
     return (
