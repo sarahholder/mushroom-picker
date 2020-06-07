@@ -9,6 +9,10 @@ import ModalDeadly from '../components/ModalDeadly';
 import ModalFullBasket from '../components/ModalFullBasket';
 import mushroomShape from '../helpers/propz/mushroomShape';
 
+import fbConnection from '../helpers/data/connection';
+
+fbConnection();
+
 class App extends React.Component {
   state = {
     mushrooms: [],
@@ -65,7 +69,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App justify-content-center ml-5 mr-5">
+      <div className="App justify-content-center ml-2 mr-2">
           {modal}
       {
         // eslint-disable-next-line max-len
