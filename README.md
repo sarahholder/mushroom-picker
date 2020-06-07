@@ -28,7 +28,9 @@ Time to help Mario collect one of each mushroom in the forest. Using React under
 
 ![Pick a Deadly Mushroom](screenshots/deadlyMushroom.png)
 
-Or run locally:
+View deployed site: https://mushroom-mania-sh.web.app/
+
+Or Run locally:
 
 1. Install npm http-server [Click here for instructions](https://www.npmjs.com/package/http-server)
 
