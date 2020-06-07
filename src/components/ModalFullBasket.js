@@ -12,7 +12,7 @@ const ModalFullBasket = (props) => {
   const { currentMushroom } = props;
 
   return (
-        <div className="modal">
+        <div className="modal container">
           <Modal returnFocusAfterClose={focusAfterClose} isOpen={open} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <ModalBody>
               <div>
@@ -31,7 +31,7 @@ const ModalFullBasket = (props) => {
                 <h2 className="modal-p m-0">You WIN!</h2>
                  <div><button className="btn btn-danger m-1" onClick={toggle}>Play Again</button></div>
                 {
-                  currentMushroom.isMagic ? (<img className="magic" src={currentMushroom.imgUrl} alt="magic"/>) : (<div className="mario-clap"></div>)
+                  currentMushroom.isMagic ? (<img className="magic img-fluid" src={currentMushroom.imgUrl} alt="magic"/>) : (<div className="mario-clap"></div>)
                 }
               </div>
             </ModalBody>

@@ -12,25 +12,22 @@
 
 .modal-p{
   color: white;
-  font-size: 2vw;
+  font-size: calc(7px + .5vw);
 }
-.modal-img {
-  height: 500px;
-  width: auto;
+.img-fluid{
+  max-width:40%;
+  height: auto;
 }
+
 .bowser {
   -webkit-animation: anim 10s infinite;
   animation: anim 10s infinite;
-  height: 500px;
-  width: auto;
   -webkit-filter: drop-shadow(5px 5px 5px rgb(191, 18, 18)); filter: drop-shadow(5px 5px 5px #650e0e);
 }
 
 .magic {
   -webkit-animation: anim 10s infinite;
   animation: anim 10s infinite;
-  height: 400px;
-  width: auto;
   -webkit-filter: drop-shadow(5px 5px 5px rgb(255, 255, 255)); filter: drop-shadow(5px 5px 5px #ffffff);
 }
 

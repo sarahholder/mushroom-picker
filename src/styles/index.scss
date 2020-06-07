@@ -8,8 +8,8 @@ body {
   background-color: rgba(255, 250, 250, 0.53);
   border: none;
   margin: 10px;
-  max-width: 200px;
-  min-width: 200px;
+  max-width: 140px;
+  min-width: 50px;
   text-align: center;
 }
 
@@ -18,37 +18,38 @@ body {
   border: none !important;
   margin: 10px;
   max-width: 100px;
-  min-width: 100px;
+  min-width: 50px;
   text-align: center;
 }
 h1 {
   font-family: 'Bungee Shade', cursive;
   text-shadow: 2px 2px 8px rgb(247, 14, 14);
-  font-size: 5vw;
+  font-size: calc(40px + .5vw);
   margin-top: 20px;
   margin-bottom: 40px;
   }
 h2 {
   font-family: 'Press Start 2P', cursive ;
   text-shadow: 2px 2px 8px rgb(247, 14, 14);
-  font-size: 3vw;
+  font-size: calc(20px + .5vw);
   margin-top: 20px;
   margin-bottom: 40px;
 }
 h3, h4 {
-  font-size: 2vw;
-  font-size-adjust: 2vw;
+  font-size: calc(15px + .5vw);
   font-family: 'Squada One', cursive;
   margin: 0px;
 }
 text, p, button {
   font-family: 'Squada One', cursive;
+  font-size: calc(10px + .5vw);
   margin: 0px;
 }
 .Basket {
   background-color: #c99c6d89; 
   border: .1rem solid white;
   box-shadow: 2px 2px 4px #000000;
+  min-width:250px;
 }
 .fit-image {
   width: 100%;
