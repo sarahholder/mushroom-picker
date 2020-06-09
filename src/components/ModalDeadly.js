@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 import './Modal.scss';
 
+
 const ModalDeadly = (props) => {
   const [open, setOpen] = useState(true);
   const [focusAfterClose] = useState(true);
@@ -14,12 +15,11 @@ const ModalDeadly = (props) => {
   const toggle = () => setOpen(!open);
 
   return (
-        <div class="modal">
+        <div className="modal">
           <Modal returnFocusAfterClose={focusAfterClose} isOpen={open} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <ModalBody>
               <div>
                 <h2 className="m-1 modal-h2">{currentMushroom.name}</h2>
-                <audio><source src="https://www.myinstants.com/instant/mario-64-bowsers-laugh-82961/embed/" type="audio/mpeg"/>HELLO</audio>
                 <img className="deadly" src={currentMushroom.imgUrl} alt={currentMushroom.name}/>
                 <h3 className="modal-p m-1">DEADLY MUSHROOM</h3>
                 <h2 className="modal-p m-0">GAME OVER</h2>

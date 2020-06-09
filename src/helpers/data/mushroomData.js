@@ -10,6 +10,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: false,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_happy_message.wav',
   },
   {
     id: 'mushroom2',
@@ -20,6 +21,7 @@ const mushrooms = [
     isPoisonous: true,
     isDeadly: false,
     isNormal: false,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_ungh.wav',
   },
   {
     id: 'mushroom3',
@@ -31,6 +33,7 @@ const mushrooms = [
     isPoisonous: true,
     isDeadly: false,
     isNormal: false,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_oof.wav',
   },
   {
     id: 'mushroom4',
@@ -41,6 +44,7 @@ const mushrooms = [
     isPoisonous: true,
     isDeadly: false,
     isNormal: false,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_hurt.wav',
   },
   {
     id: 'mushroom5',
@@ -51,6 +55,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: true,
     isNormal: false,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_game_over.wav',
   },
   {
     id: 'mushroom6',
@@ -61,6 +66,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_yippee.wav',
   },
   {
     id: 'mushroom7',
@@ -71,6 +77,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_coin.wav',
   },
   {
     id: 'mushroom8',
@@ -81,6 +88,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_blue_coin.wav',
   },
   {
     id: 'mushroom9',
@@ -91,6 +99,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_1-up.wav',
   },
   {
     id: 'mushroom10',
@@ -101,6 +110,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_red_coin_jp.wav',
   },
   {
     id: 'mushroom11',
@@ -111,6 +121,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_red_coin_3.wav',
   },
   {
     id: 'mushroom12',
@@ -121,6 +132,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_spinning_heart.wav',
   },
   {
     id: 'mushroom13',
@@ -132,6 +144,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_haha.wav',
   },
   {
     id: 'mushroom14',
@@ -142,6 +155,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_yahoo.wav',
   },
   {
     id: 'mushroom15',
@@ -152,6 +166,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_boing.wav',
   },
   {
     id: 'mushroom16',
@@ -162,6 +177,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_waha.wav',
   },
   {
     id: 'mushroom17',
@@ -172,6 +188,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_hoohoo.wav',
   },
   {
     id: 'mushroom18',
@@ -182,6 +199,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_mario_hoo.wav',
   },
   {
     id: 'mushroom19',
@@ -192,6 +210,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_red_coin_7.wav',
   },
   {
     id: 'mushroom20',
@@ -202,6 +221,7 @@ const mushrooms = [
     isPoisonous: false,
     isDeadly: false,
     isNormal: true,
+    sound: 'https://themushroomkingdom.net/sounds/wav/sm64/sm64_spotted_by_goomba.wav',
   },
 ];
 const getMushrooms = () => mushrooms;
@@ -253,6 +273,7 @@ const pickedPoisonousMushroom = (passedInTotal) => {
 };
 
 const gathered = (mushroom) => {
+  new Audio(mushroom.sound).play();
   const selectedMushroom = mushroom;
   const totalNormalMushrooms = getNormalMushrooms();
   let fullBasket = false;
@@ -265,6 +286,7 @@ const gathered = (mushroom) => {
   }
   if (basket.length === totalNormalMushrooms) {
     fullBasket = true;
+    new Audio('https://themushroomkingdom.net/sounds/wav/sm64/sm64_high_score.wav').play();
   }
   return fullBasket;
 };
@@ -290,14 +312,16 @@ const pickAMushroom = () => {
   const pickedMushroom = mushrooms[Math.floor(Math.random() * forestMushrooms)];
   if (pickedMushroom.isPoisonous) {
     pickedPoisonousMushroom(totalInBasket);
+    new Audio(pickedMushroom.sound).play();
   } else if (pickedMushroom.isDeadly) {
+    new Audio(pickedMushroom.sound).play();
     basket = [];
   } else if (pickedMushroom.isMagic) {
     pickedMagicMushroom();
+    new Audio(pickedMushroom.sound).play();
   } else {
     gathered(pickedMushroom);
   }
-
   return pickedMushroom;
 };
 

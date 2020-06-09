@@ -45,6 +45,7 @@ class App extends React.Component {
     mushroomData.emptyBasket();
     mushroomData.getBasket();
     mushroomData.getMushrooms();
+    new Audio('https://themushroomkingdom.net/sounds/wav/sm64/sm64_here_we_go.wav').play();
   }
 
 
