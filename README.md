@@ -2,7 +2,7 @@
 
 ## Description
 
-Time to help Mario collect one of each mushroom in the forest. Using React under the hood to make the magic happen. This project was an introductory project to React. Focusing on data and components for a better understanding of how data is minipulated, communicated and displayed using React.
+Time to help Mario collect one of each mushroom in the forest. Using React under the hood to make the magic happen. This project was an introductory project to React. Focusing on data and components for a better understanding of how data is manipulated, communicated and displayed using React.
 
 <strong> Project specifications found [here. </strong>](https://github.com/nss-nightclass-projects/exercise-vault/blob/master/REACT_mushroom_picker.md)
 
